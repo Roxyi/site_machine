@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/grid.css" />
+  </head>
+  <body>
+    <!--Header-->
+    <div class="header">
+      <div class="column-one-third">
+        <p><span style="color:rgb(253,127,19)">Site <span style="color:rgb(201, 61, 131)">Machine</p>
+      </div>
+      <div class="column-one-third">
+        <div class="dropdown">
+          <button class="btn" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Demographics
+            <span class="caret"></span>
+          </button>
+        </div>
+      </div>
+      <div class="column-one-third">
+        <div class="dropdown">
+          <button class="btn" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Site Suitability
+            <span class="caret"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <p>Lot Size
+        <input type="number" id="numeric-input1"> <span style="color:white">&#x2015;
+        <input type="number" id="numeric-input2">
+      </p>
+      <p>The Best <input type="number" id="numeric-input3"> Shops</p>
+      <button id="button1">Find</button>
+    </div>
+    <div class="sidebar2">
+      <a href="#" id="b1" class="button-0">Median Rent</a>
+      <a href="#" id="b2" class="button-0">Median Value</a>
+      <a href="#" id="b3" class="button-0">Percent White</a>
+    </div>
+    <div class="sidebar3">
+    </div>
+    <div id="legend1" class='cartodb-legend choropleth'>
+      <ul>
+        <li class="min">
+          525.00
+        </li>
+        <li class="max">
+          938.00
+        </li>
+        <li class="graph count_441">
+          <div class="colors">
+            <div class="quartile" style="background-color:#FFFFB2"></div>
+            <div class="quartile" style="background-color:#FED976"></div>
+            <div class="quartile" style="background-color:#FEB24C"></div>
+            <div class="quartile" style="background-color:#FD8D3C"></div>
+            <div class="quartile" style="background-color:#FC4E2A"></div>
+            <div class="quartile" style="background-color:#E31A1C"></div>
+            <div class="quartile" style="background-color:#B10026"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="legend2" class='cartodb-legend choropleth'>
+      <ul>
+        <li class="min">
+          6836.00
+        </li>
+        <li class="max">
+          174452.00
+        </li>
+        <li class="graph count_441">
+          <div class="colors">
+            <div class="quartile" style="background-color:#FFFFCC"></div>
+            <div class="quartile" style="background-color:#C7E9B4"></div>
+            <div class="quartile" style="background-color:#7FCDBB"></div>
+            <div class="quartile" style="background-color:#41B6C4"></div>
+            <div class="quartile" style="background-color:#1D91C0"></div>
+            <div class="quartile" style="background-color:#225EA8"></div>
+            <div class="quartile" style="background-color:#0C2C84"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="legend3" class='cartodb-legend choropleth'>
+      <ul>
+        <li class="min">
+          0.59
+        </li>
+        <li class="max">
+          64.77
+        </li>
+        <li class="graph count_441">
+          <div class="colors">
+            <div class="quartile" style="background-color:#1a9850"></div>
+            <div class="quartile" style="background-color:#8cce8a"></div>
+            <div class="quartile" style="background-color:#d2ecb4"></div>
+            <div class="quartile" style="background-color:#fff2cc"></div>
+            <div class="quartile" style="background-color:#fed6b0"></div>
+            <div class="quartile" style="background-color:#f79272"></div>
+            <div class="quartile" style="background-color:#d73027"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Map -->
+    <div id="map" class="map">
+    </div>
+    <!-- Javascript Imports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.2.3/leaflet.draw.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
