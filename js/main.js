@@ -278,7 +278,7 @@ function draw(results){
       "<dd>" + rec.street + "</dd>" +
       "<dt>Lot Size (sqft)</dt>" +
       "<dd>" + rec.lotsqft + "</dd>" +
-      "<dt>Prdicted Sales ($)</dt>" +
+      "<dt>Predicted Sales ($)</dt>" +
       "<dd>" + rec.predicted_sales + "</dd>" +
       "<dt>Value ($)</dt>" +
       "<dd>" + rec.value + "</dd>" +
