@@ -28,7 +28,7 @@
   padding: 20px;
 }
 
-.column-one-third {
+.column-one-third-1 {
   width: 33.33333%;
   height: 100px;
   float: left;
@@ -38,10 +38,17 @@
   box-sizing: border-box;
 }
 
+.column-one-third {
+  width: 33.33333%;
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 .column-two-thirds {
   width: 66.66666%;
   float: left;
-  padding: 20px;
+  padding: 10px;
 }
 
 .column-one-quarter {

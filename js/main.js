@@ -1,8 +1,10 @@
 // Leaflet map setup
 var map = L.map('map', {
+  zoomControl: false,
   center: [39.956, -75.211],
   zoom: 14
 });
+
 
 
 var CartoDB_DarkMatter = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
@@ -10,6 +12,8 @@ var CartoDB_DarkMatter = L.tileLayer('http://{s}.basemaps.cartocdn.com/dark_all/
 	subdomains: 'abcd',
 	maxZoom: 19
 }).addTo(map);
+$('#home').show();
+$('#about').hide();
 $('.sidebar').hide();
 $('.sidebar2').hide();
 $('.sidebar3').hide();
@@ -21,10 +25,13 @@ $('#legend3').hide();
 var layerUrl = 'https://yixu0215.cartodb.com/api/v2/viz/4ef72dbe-12f1-11e6-99c8-0ecfd53eb7d3/viz.json';
 var layer1;
 var layers;
+var homelayer;
 var sql;
 var markers=[];
 var marker;
 var opts;
+
+
 
 var MRCSS = [
   '#zillow_acs_westphilly_1{',
@@ -125,11 +132,57 @@ var PWCSS = [
 '}'
 ].join('\n');
 
-$('#dropdownMenu1').click(function(){
+$('#homebt').click(function(){
+  $('#home').show();
+  $('#about').hide();
+  $('.sidebar').hide();
+  $('.sidebar2').hide();
+  $('.sidebar3').hide();
+  $('#legend1').hide();
+  $('#legend2').hide();
+  $('#legend3').hide();
   if(markers){
       _.each(markers,function(layer){
         map.removeLayer(layer);
       });
+  }
+  if(layers){
+    map.removeLayer(layers);
+  }
+});
+
+$('#bt1').click(function(){
+  $('#about').show();
+  $('#home').hide();
+  $('.sidebar').hide();
+  $('.sidebar2').hide();
+  $('.sidebar3').hide();
+  $('#legend1').hide();
+  $('#legend2').hide();
+  $('#legend3').hide();
+  if(homelayer){
+    map.removeLayer(homelayer);
+  }
+  if(markers){
+      _.each(markers,function(layer){
+        map.removeLayer(layer);
+      });
+  }
+  if(layers){
+    map.removeLayer(layers);
+  }
+})
+
+$('#dropdownMenu1').click(function(){
+  $('#home').hide();
+  $('#about').hide();
+  if(markers){
+      _.each(markers,function(layer){
+        map.removeLayer(layer);
+      });
+  }
+  if(homelayer){
+    map.removeLayer(homelayer);
   }
   $('.sidebar2').show();
   $('.sidebar3').show();
@@ -137,8 +190,13 @@ $('#dropdownMenu1').click(function(){
 });
 
 $('#dropdownMenu2').click(function(){
+  $('#home').hide();
+  $('#about').hide();
   if(layers){
     map.removeLayer(layers);
+  }
+  if(homelayer){
+    map.removeLayer(homelayer);
   }
   $('.sidebar').show();
   $('.sidebar3').hide();
